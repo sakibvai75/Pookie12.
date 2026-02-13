@@ -1,0 +1,21 @@
+<audio id="valentineMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // This plays the music as soon as she clicks anywhere on the page
+  document.body.addEventListener('click', function() {
+      const audio = document.getElementById('valentineMusic');
+      if (audio.paused) {
+          audio.play();
+      }
+  }, { once: true }); // 'once: true' ensures it only triggers on the first click
+
+  // Optional: Make music start specifically when she clicks "Yes"
+  const yesButton = document.querySelector('.yes-button'); // Ensure your button has this class
+  if(yesButton) {
+      yesButton.addEventListener('click', () => {
+          document.getElementById('valentineMusic').play();
+      });
+  }
+</script>
